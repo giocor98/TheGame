@@ -5,5 +5,7 @@
 
     void PrintDeck();
     void PrintMano();
+    void PrintPila();
+    void PrintProgram();
 
 #endif

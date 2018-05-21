@@ -3,6 +3,7 @@
   #define READ_H
 
   #include "include.h"
+  #include "stack.h"
 
   #define FILENAME "gamestatus"
 

@@ -1,7 +1,13 @@
 #ifndef INCLUDE_H
   #define INCLUDE_H
 
+  //#define DEBUGVV
   #define DEBUG
+  //#define PRINTA
+
+  #ifdef DEBUGVV
+    #define DEBUG
+  #endif
 
   #ifdef DEBUG
     #define PRINTA
@@ -10,7 +16,6 @@
   #include <stdio.h>
   #include <stdlib.h>
   #include <time.h>
-  #include <stdlib.h>
 
   #ifdef PRINTA
     #include "Print.h"
@@ -19,10 +24,14 @@
   #define MAX_PLAYER 5
   #define MAX_CARTE 8
 
+  #define N_PILE 4
+  #define CRESCENTI 1
+
   extern char mano [MAX_PLAYER][MAX_CARTE];
 
-  extern char Deck[98];
+  extern char Deck[98], pila[N_PILE];
   extern int N_player;
   extern int N_carte;
+  extern int status;
 
 #endif

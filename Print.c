@@ -17,3 +17,14 @@ void PrintMano(){
     printf("\n");
   }
 }
+
+void PrintPila(){
+  for(int i = 0;i<N_PILE;i++){
+    printf("Pila %s %d:\t%d\n", (i<=CRESCENTI?"crescente":"decrescente"), i, pila[i]);
+  }
+}
+
+void PrintProgram(){
+  PrintMano();
+  PrintPila();
+}
