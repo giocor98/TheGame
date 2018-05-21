@@ -1,8 +1,13 @@
 #include "include.h"
 #include "Print.h"
 #include "Shuffle.h"
+#include "Reader.h"
 
 int main(){
-  ShuffleDeck();
-  PescaCarte();
+  if(!Initialize()){
+    ShuffleDeck();
+    PescaCarte();
+  }
+  PrintMano();
+  WriteProgram();
 }

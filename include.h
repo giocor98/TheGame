@@ -24,6 +24,5 @@
   extern char Deck[98];
   extern int N_player;
   extern int N_carte;
-  extern int ToShuffle;
 
 #endif

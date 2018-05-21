@@ -4,5 +4,6 @@
     #include "include.h"
 
     void PrintDeck();
+    void PrintMano();
 
 #endif
