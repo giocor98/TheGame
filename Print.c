@@ -28,3 +28,12 @@ void PrintProgram(){
   PrintMano();
   PrintPila();
 }
+
+void PrintPlayerHand(int Player){
+  int c;
+  printf("Player's %d hand:\n", Player);
+  for(c = 0; c<N_carte; c++){
+    printf("%d -> %d;  ", c, mano[Player][c]);
+  }
+  printf("\n");
+}

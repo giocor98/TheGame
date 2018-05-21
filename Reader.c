@@ -38,16 +38,16 @@ int Initialize(){
 
   }
 
-  do{
+  ch = fgetc(fp);
+  while (ch!='p'&&ch!=EOF){
     ch = fgetc(fp);
-  }while(ch!='p'&&ch!=EOF);
+  }
 
   for(int i = 0; i<N_PILE; i++){
     fscanf(fp, "\n%d", &pila[i]);
   }
-
   ch = fgetc(fp);
-  while (ch!='m'&&ch!=EOF){
+  while (ch!='m'){
     ch = fgetc(fp);
   }
   for (int i=0;i<98;i++){
@@ -59,6 +59,12 @@ int Initialize(){
     if(ch == 'P'){
       int p, c, x;
       fscanf(fp, "%d, %d, %d\n", &p, &c, &x);
+      if(p<0||c<0||x<0||p>N_player||c>N_carte||x>N_PILE){
+        #ifdef PRINTA
+          printf("Errore nel passaggio parametri\n");
+        #endif
+        return -1;
+      }
       if(AddToStack(p, c, x)){
         #ifdef PRINTA
           printf("\n\n[GAME]added the %d card (%d) of %d player to %d stack\n", c, pila[x], p, x);
@@ -67,6 +73,7 @@ int Initialize(){
         #ifdef PRINTA
           printf("ERROR\nIcannot add the selected card to the stack\n");
         #endif
+        return -1;
       }
     }
   }while(ch!=EOF);
@@ -96,7 +103,12 @@ int WriteProgram(){
     }
   }
 
-  fprintf(fp, "\n\nm\n");
+  fprintf(fp, "\n\n\n-p\n");
+  for(int i=0;i<N_PILE;i++){
+    fprintf(fp, "%d\n", pila[i]);
+  }
+
+  fprintf(fp, "\n\n-m\n");
 
   for (int i=0;i<98;i++){
     fprintf(fp, "%d\n", Deck[i]);

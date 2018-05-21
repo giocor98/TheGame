@@ -7,5 +7,6 @@
     void PrintMano();
     void PrintPila();
     void PrintProgram();
+    void PrintPlayerHand(int player);
 
 #endif

@@ -2,7 +2,7 @@
   #define INCLUDE_H
 
   //#define DEBUGVV
-  #define DEBUG
+  //#define DEBUG
   //#define PRINTA
 
   #ifdef DEBUGVV
@@ -27,9 +27,9 @@
   #define N_PILE 4
   #define CRESCENTI 1
 
-  extern char mano [MAX_PLAYER][MAX_CARTE];
+  extern int mano [MAX_PLAYER][MAX_CARTE];
 
-  extern char Deck[98], pila[N_PILE];
+  extern int Deck[98], pila[N_PILE];
   extern int N_player;
   extern int N_carte;
   extern int status;

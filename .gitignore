@@ -1,4 +1,7 @@
 *.o
 program
 gamestatus
+turnogame
 *.out
+TheGame
+TheGameInLine

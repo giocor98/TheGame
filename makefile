@@ -1,7 +1,10 @@
-program: DeckManager.out Initialiser
-		./Initialiser
-		rm Initialiser
+TheGame: TheGameInLine TheGame.c
+		gcc -o TheGame TheGame.c
 
+TheGameInLine: DeckManager.out Initialiser TheGameInLine.c Reader.o stack.o Print.o
+		gcc -o TheGameInLine TheGameInLine.c Reader.o stack.o Print.o
+		./Initialiser
+		
 DeckManager.out: global.o Shuffle.o Print.o Reader.o DeckManager.c stack.o
 				gcc -o DeckManager.out DeckManager.c global.o Shuffle.o Print.o Reader.o stack.o
 

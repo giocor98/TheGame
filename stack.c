@@ -16,7 +16,7 @@ int VerifyAddToStack( int player, int card, int Npila){
     if(pila[Npila]<mano[player][card]||pila[Npila]==10+mano[player][card]){
       return 1;
     }
-  }else if(Npila == 2 || Npila == 2){
+  }else if(Npila == 2 || Npila == 3){
     //pila crescente
     if(pila[Npila]>mano[player][card]||pila[Npila]==mano[player][card]-10){
       return 1;
